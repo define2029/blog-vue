@@ -1,5 +1,9 @@
-import { defineStore } from 'pinia'
+import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
-export const useCounterStore = defineStore('storeName', () => {
-  return {}
-})
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
+
+export default pinia
+
+export * from './modules/modal'
